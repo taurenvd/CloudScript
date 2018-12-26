@@ -125,7 +125,8 @@ handlers.RoomClosed = function (args) {
 handlers.RoomPropertyUpdated = function (args) {
   	server.WriteTitleEvent(
       {
-      	EventName: "RoomPropsChanged"
+      	EventName: "RoomPropsUpdated"
+        Body: JSON.stringify({input: args})
       });
     log.debug("Room Property Updated - Game: " + args.GameId);
 };
